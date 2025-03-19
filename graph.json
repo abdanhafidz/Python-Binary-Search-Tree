@@ -1,0 +1,22 @@
+{"key": 3,
+ "left": {"key": 1,
+  "left": {"key": 0, "left": None, "right": None
+        },
+  "right": {"key": 2,
+   "left": {"key": 1,
+    "left": None,
+    "right": {"key": 1, "left": None, "right": None
+                }
+            },
+   "right": None
+        }
+    },
+ "right": {"key": 4,
+  "left": None,
+  "right": {"key": 5,
+   "left": None,
+   "right": {"key": 6, "left": None, "right": None
+            }
+        }
+    }
+}
