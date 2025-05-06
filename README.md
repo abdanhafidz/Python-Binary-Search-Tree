@@ -21,7 +21,8 @@ def psource(*functions):
 Sebuah pohon adalah graf terhubung yang tidak memiliki siklus dan terdiri dari 
 𝑛 simpul serta  𝑛 - 1 Menghapus satu sisi dari pohon akan membagi graf menjadi dua komponen terpisah, sementara menambahkan satu sisi ke pohon akan membentuk sebuah siklus. Selain itu, selalu ada satu jalur unik yang menghubungkan setiap pasangan simpul dalam pohon.
 
-![image.png](notebook_id_files/image.png)
+![image](https://github.com/user-attachments/assets/b9f4dbef-b138-4439-a56c-608f8da494d4)
+
 
 ## Representasi Sebuah Tree
 
