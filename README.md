@@ -163,7 +163,8 @@ Sekarang jika kita tambahkan 0,
 - 0 < 3 , maka 0 ditempatkan di sisi kirinya 3
 - 0 < 1 , maka 0 ditempatkan di sisi kirinya 1
 
-![image.png](notebook_id_files/image.png)
+![image](https://github.com/user-attachments/assets/6dccc265-3579-4832-9acc-f6be2a657bb0)
+
 
 
 ```python
@@ -293,7 +294,8 @@ delete(myBST, 1)
 
 
 
-![image.png](notebook_id_files/image.png)
+![image](https://github.com/user-attachments/assets/85a96956-128f-4c33-a7e5-41b411675c68)
+
 
 ## From Array to Optimal BST
 
