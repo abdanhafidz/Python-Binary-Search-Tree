@@ -329,7 +329,7 @@ delete(myBST, 6)
 
 
 
-![image.png](README_files/image.png)
+![image](https://github.com/user-attachments/assets/7db9d7f6-2038-4380-80b0-58dcdacd006c)
 
 
 ```python
@@ -348,17 +348,13 @@ delete(myBST, 1)
      'right': {'key': 4,
       'left': None,
       'right': {'key': 5, 'left': None, 'right': None}}}
+      
 
-
-
-![image.png](README_files/image.png)
-
-## From Array to BST
+## From Array to Optimalized BST
 
 Misalkan kita mempunyai sebuah data acak [1,5,3,4,9,1,11], kita akan coba mengonstruksi BSTnya
 
-Pertama - tama, syarat dari sebuah BST adalah _datanya terurut_, karena jika anda membangun menggunakan data yang tidak terurut maka akan menjadi Min Heap
-
+Pertama - tama, syarat dari sebuah Optimalized BST adalah _datanya terurut_
 
 ```python
 arr = [1,5,3,4,9,1,11]
