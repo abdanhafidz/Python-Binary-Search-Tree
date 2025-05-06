@@ -21,7 +21,7 @@ def psource(*functions):
 Sebuah pohon adalah graf terhubung yang tidak memiliki siklus dan terdiri dari 
 𝑛 simpul serta  𝑛 - 1 Menghapus satu sisi dari pohon akan membagi graf menjadi dua komponen terpisah, sementara menambahkan satu sisi ke pohon akan membentuk sebuah siklus. Selain itu, selalu ada satu jalur unik yang menghubungkan setiap pasangan simpul dalam pohon.
 
-![image.png](README_files/image.png)
+![image.png](notebook_id_files/image.png)
 
 ## Representasi Sebuah Tree
 
@@ -90,7 +90,7 @@ Langkah pertama kita instansiasi sebuah root dari BST yang ingin kita buat, seba
 myBST = new_bst(3)
 ```
 
-![image-2.png](README_files/image-2.png)
+![image-2.png](notebook_id_files/image-2.png)
 
 kemudian kita dapat menambahkan children dari 3 misalkan adalah 1 dan 2, menggunakan fungsi `insert` 
 
@@ -129,9 +129,9 @@ insert(myBST, 2)
 
 
 
-Perhatikan bahwa karena nilai 1 < 2 maka 1 akan ditempatkan di sebelah kiri
+Perhatikan bahwa karena nilai 1 < 3 maka 1 akan ditempatkan di sebelah kiri 3, kemudian 2 akan berada di sebelah kanan 1
 
-![image-2.png](README_files/image-2.png)
+![image-3.png](notebook_id_files/image-3.png)
 
 Misal kita tambahkan lagi children yaitu 4 dan 5
 
@@ -154,16 +154,19 @@ insert(myBST, 5)
 
 
 
-Perhatikan bahwa karena 4 dan 5 > 3 maka 4 dan 5 harus ditempatkan di segmen kanan children 3, sehingga 4 akan ditempatkan sebagai children 2
+Perhatikan bahwa karena 4 dan 5 > 3 maka 4 dan 5 harus ditempatkan di segmen kanan children 3, 4 berada di sebelah kanan 3 dan 5 berada di sebelah kanan 4.
 
-![image.png](README_files/image.png)
+![image-2.png](notebook_id_files/image-2.png)
 
-Kita uji misalkan ditambahkan children baru yaitu 0 dan 1
+Sekarang jika kita tambahkan 0, 
+- 0 < 3 , maka 0 ditempatkan di sisi kirinya 3
+- 0 < 1 , maka 0 ditempatkan di sisi kirinya 1
+
+![image.png](notebook_id_files/image.png)
 
 
 ```python
 insert(myBST, 0)
-insert(myBST, 1)
 ```
 
 
@@ -172,64 +175,20 @@ insert(myBST, 1)
     {'key': 3,
      'left': {'key': 1,
       'left': {'key': 0, 'left': None, 'right': None},
-      'right': {'key': 2,
-       'left': {'key': 1, 'left': None, 'right': None},
-       'right': None}},
+      'right': {'key': 2, 'left': None, 'right': None}},
      'right': {'key': 4,
       'left': None,
       'right': {'key': 5, 'left': None, 'right': None}}}
 
 
 
-![image.png](README_files/image.png)
 
-Karena 0 dan 1 < 3 maka 0 dan 1 harus ditempatkan di segmen kiri, sehingga 0 dan 1 akan menjadi children dari 1
-
-Sekarang coba tambahkan 1 dan 6, maka lihat hasilnya bagaimana
-
-
-```python
-insert(myBST, 1)
-insert(myBST, 6)
-```
-
-
-
-
-    {'key': 3,
-     'left': {'key': 1,
-      'left': {'key': 0, 'left': None, 'right': None},
-      'right': {'key': 2,
-       'left': {'key': 1,
-        'left': None,
-        'right': {'key': 1, 'left': None, 'right': None}},
-       'right': None}},
-     'right': {'key': 4,
-      'left': None,
-      'right': {'key': 5,
-       'left': None,
-       'right': {'key': 6, 'left': None, 'right': None}}}}
-
-
-
-1 < 3 maka 1 akan berada di segmen kiri, di segmen kiri 3 terdapat 1 <br>
-1 >= 1 (1 tidak kurang dari 1) 
 ```python
     if key < tree['key']:
         tree['left'] = insert(tree['left'], key)
     else:
         tree['right'] = insert(tree['right'], key)
 ```
-
-maka 1 akan ditempatkan di segmen kanan 1, di segmen kanan 1 terdapat 2 <br>, maka 1 akan menjadi children dari 2
-1 > 2 maka 1 akan ditempatkan di segmen kanan 2
-
-
-6 > 3 maka 6 akan berada di segmen kanannya 3, di segmen kanannya 3 terdapat 2
-6 > 2 maka 6 akan berada di segmen kanannya 2, di segmen kanannya 2 terdapat 5
-6 > 2 maka 5 akan berada di segmen kanannya 5.
-
-![image.png](README_files/image.png)
 
 ## Searching Node
 
@@ -258,19 +217,19 @@ search(myBST, 6)
 
 
 
-    True
+    False
 
 
 
 
 ```python
-search(myBST, 10)
+search(myBST, 1)
 ```
 
 
 
 
-    False
+    True
 
 
 
@@ -317,30 +276,6 @@ Dengan pendekatan ini, **struktur BST tetap terjaga** , dan penghapusan dilakuka
 
 
 ```python
-delete(myBST, 6)
-```
-
-
-
-
-    {'key': 3,
-     'left': {'key': 1,
-      'left': {'key': 0, 'left': None, 'right': None},
-      'right': {'key': 2,
-       'left': {'key': 1,
-        'left': None,
-        'right': {'key': 1, 'left': None, 'right': None}},
-       'right': None}},
-     'right': {'key': 4,
-      'left': None,
-      'right': {'key': 5, 'left': None, 'right': None}}}
-
-
-
-![image.png](README_files/image.png)
-
-
-```python
 delete(myBST, 1)
 ```
 
@@ -348,24 +283,22 @@ delete(myBST, 1)
 
 
     {'key': 3,
-     'left': {'key': 1,
+     'left': {'key': 2,
       'left': {'key': 0, 'left': None, 'right': None},
-      'right': {'key': 2,
-       'left': {'key': 1, 'left': None, 'right': None},
-       'right': None}},
+      'right': None},
      'right': {'key': 4,
       'left': None,
       'right': {'key': 5, 'left': None, 'right': None}}}
 
 
 
-![image.png](README_files/image.png)
+![image.png](notebook_id_files/image.png)
 
-## From Array to BST
+## From Array to Optimal BST
 
 Misalkan kita mempunyai sebuah data acak [1,5,3,4,9,1,11], kita akan coba mengonstruksi BSTnya
 
-Pertama - tama, syarat dari sebuah BST adalah _datanya terurut_, karena jika anda membangun menggunakan data yang tidak terurut maka akan menjadi Min Heap
+Pertama - tama, agar optimal maka datanya akan kita urutkan
 
 
 ```python
@@ -393,7 +326,9 @@ Kemudian tetapkan bahwa root dari BST adalah nilai tengah segmen data yang kita 
 
 
 ```python
-mid = len(arr)//2
+left = 0
+right = len(arr) - 1
+mid = (left+right)//2
 ```
 
 
