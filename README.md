@@ -129,9 +129,9 @@ insert(myBST, 2)
 
 
 
-Perhatikan bahwa karena nilai 1 < 2 maka 1 akan ditempatkan di sebelah kiri
+Perhatikan bahwa karena nilai 1 < 3 maka 1 akan ditempatkan di sebelah kiri, kemudian berikutnya karena 2 < 3 dan 2 > 1 maka, 2 akan diletakkan di segmen kiri 3 dan di sebelah kanan 1.
 
-![image-2.png](README_files/image-2.png)
+![image](https://github.com/user-attachments/assets/cafafaa1-681b-4ebe-84d9-02e5a75a8e60)
 
 Misal kita tambahkan lagi children yaitu 4 dan 5
 
@@ -156,7 +156,8 @@ insert(myBST, 5)
 
 Perhatikan bahwa karena 4 dan 5 > 3 maka 4 dan 5 harus ditempatkan di segmen kanan children 3, sehingga 4 akan ditempatkan sebagai children 2
 
-![image.png](README_files/image.png)
+![image](https://github.com/user-attachments/assets/e234fa28-7bbc-44c9-98ff-5bfeb6964760)
+
 
 Kita uji misalkan ditambahkan children baru yaitu 0 dan 1
 
@@ -165,10 +166,6 @@ Kita uji misalkan ditambahkan children baru yaitu 0 dan 1
 insert(myBST, 0)
 insert(myBST, 1)
 ```
-
-
-
-
     {'key': 3,
      'left': {'key': 1,
       'left': {'key': 0, 'left': None, 'right': None},
@@ -180,10 +177,10 @@ insert(myBST, 1)
       'right': {'key': 5, 'left': None, 'right': None}}}
 
 
+![image](https://github.com/user-attachments/assets/7db9d7f6-2038-4380-80b0-58dcdacd006c)
 
-![image.png](README_files/image.png)
 
-Karena 0 dan 1 < 3 maka 0 dan 1 harus ditempatkan di segmen kiri, sehingga 0 dan 1 akan menjadi children dari 1
+Seharusnya ini tidak diizinkan dalam BST karena ada duplikasi data, namun di sini kita asumsikan adanya handling bahwa nilai duplikat akan dianggap <= dan diletakkan di bagian kiri node. Karena 0 dan 1 < 3 maka 0 dan 1 harus ditempatkan di segmen kiri, sehingga 0 dan 1 akan menjadi children dari 1
 
 Sekarang coba tambahkan 1 dan 6, maka lihat hasilnya bagaimana
 
@@ -192,10 +189,6 @@ Sekarang coba tambahkan 1 dan 6, maka lihat hasilnya bagaimana
 insert(myBST, 1)
 insert(myBST, 6)
 ```
-
-
-
-
     {'key': 3,
      'left': {'key': 1,
       'left': {'key': 0, 'left': None, 'right': None},
@@ -229,7 +222,6 @@ maka 1 akan ditempatkan di segmen kanan 1, di segmen kanan 1 terdapat 2 <br>, ma
 6 > 2 maka 6 akan berada di segmen kanannya 2, di segmen kanannya 2 terdapat 5
 6 > 2 maka 5 akan berada di segmen kanannya 5.
 
-![image.png](README_files/image.png)
 
 ## Searching Node
 
